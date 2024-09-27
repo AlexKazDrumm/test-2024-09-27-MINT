@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage';
 import OrgsPage from './pages/OrgsPage';
@@ -8,14 +8,12 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<NavBar />}>
-            <Route index element={<HomePage />} />
-            <Route path="orgs" element={<OrgsPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<NavBar />}>
+          <Route index element={<HomePage />} />
+          <Route path="orgs" element={<OrgsPage />} />
+        </Route>
+      </Routes>
     </>
   );
 }
